@@ -240,6 +240,7 @@ When writing unit tests, perform the following:
 
 
 ## Release History
+- 1.5.0: Upgraded drain function for Node > 14
 - 1.4.0: Reporting errors when failing to run `pngquant` and added option `failOnError`. To begin failing on errors, please set `failOnError` to `true`. (2020-07-10 via [#21](https://github.com/zauni/pngmin/issues/21))
 - 1.3.0: Option to disable Floyd-Steinberg dithering (2017-04-02)
 - 1.2.0: Option to specify if a retry is made when pngquant exits with status 99

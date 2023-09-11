@@ -192,13 +192,13 @@ module.exports = function(grunt) {
         // every file will be pushed in this queue
         queue = grunt.util.async.queue(optimize, options.concurrency);
 
-        queue.drain = function() {
+        queue.drain( () => {
             var sum = totalPercent.reduce(function(a, b) { return a + b; }, 0),
                 avg = totalPercent.length > 0 ? Math.floor(sum / totalPercent.length) : 0;
 
             grunt.log.writeln('Overall savings: ' + (avg + ' %').green + ' | ' + filesize(totalSize).green);
             done();
-        };
+        });
 
         // Iterate over all specified file groups.
         this.files.forEach(function(f) {
